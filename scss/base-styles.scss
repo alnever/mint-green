@@ -1,0 +1,113 @@
+p, li, a {
+  font-family: $font-serif;
+  font-size: $regular;
+  color: $text-dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-sans-serif;
+  font-size: $huge;
+  color: $text-dark;
+}
+
+h1 {
+  font-size: $huge;
+}
+
+h2 {
+  font-size: $large;
+}
+
+h3 {
+  font-size: $semi-large;
+}
+
+h4 {
+  font-size: $bigger;
+}
+
+h5 {
+  font-size: $big;
+}
+
+h6 {
+  font-size: $regular;
+}
+
+a {
+  color: $bg-dark;
+  text-decoration: underline;
+   &:hover {
+     text-decoration: none;
+   }
+}
+
+.selected-text {
+  display: flex;
+  flex-direction: column;
+
+  margin: 1em 0 1em 2em;
+  padding: 1em;
+
+  border: 1px solid $bg-light;
+  background-color: $bg-very-light;
+
+  box-shadow: 0 0 .5em $bg-dark;
+
+}
+
+pre, code {
+  @extend .selected-text;
+  overflow: auto;
+}
+
+blockquote, q {
+  @extend .selected-text;
+
+  padding: 1em;
+
+  font-family: $font-serif;
+  font-size: $big;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid $bg-dark;
+
+  th, td {
+    padding: .5em;
+
+    font-family: $font-sans-serif;
+    font-size: $regular;
+
+    border: 1px solid $bg-dark;
+  }
+
+  th {
+    background-color: $bg-dark;
+    color: $text-light;
+  }
+
+  td {
+    background-color: $bg-very-light;
+    color: $text-very-dark;
+  }
+
+  &.table-hover {
+    tr:hover > td {
+      background-color: $bg-dark;
+      color: $text-light;
+    }
+  }
+
+  &.table-striped {
+    tr:nth-child(odd) > td {
+      background-color: $bg-light;
+      color: $text-very-dark;
+    }
+    tr:nth-child(even) > td {
+      background-color: $bg-very-light;
+      color: $text-very-dark;
+    }
+  }
+}
